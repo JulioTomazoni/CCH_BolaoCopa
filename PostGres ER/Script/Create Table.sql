@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS public."ChaveAposta_Times"
     "Times_Posicao3" VARCHAR(30),
     "Times_Posicao4" VARCHAR(30),
     "Times_Posicao5" VARCHAR(30),
+    "Times_Posicao6" VARCHAR(30),
     "ID_ChaveAposta" integer NOT NULL,
     CONSTRAINT "ID_ChaveAposta" PRIMARY KEY ("ID_ChaveAposta")
 );
