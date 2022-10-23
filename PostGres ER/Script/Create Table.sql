@@ -3,134 +3,149 @@
 BEGIN;
 
 
-CREATE TABLE IF NOT EXISTS public."Usuario"
+CREATE TABLE IF NOT EXISTS public.Usuario
 (
-    "ID_Usuario" integer NOT NULL,
-    "Usuario" VARCHAR(100) NOT NULL,
-    "Senha" VARCHAR(30) NOT NULL,
-    "Admin" boolean,
-    "ID_Banco" integer,
-    "ID_Aposta" integer,
-    CONSTRAINT "ID_Usuario" PRIMARY KEY ("ID_Usuario")
+    ID_Usuario integer NOT NULL,
+    Usuario VARCHAR(100) NOT NULL,
+    Senha VARCHAR(30) NOT NULL,
+    Admin boolean,
+    ID_Banco integer,
+    ID_Aposta integer,
+    CONSTRAINT ID_Usuario PRIMARY KEY (ID_Usuario)
 );
+COMMIT;
 
-CREATE TABLE IF NOT EXISTS public."Aposta"
+CREATE TABLE IF NOT EXISTS public.Aposta
 (
-    "ID_Aposta" integer NOT NULL,
-    "ID_Usuario" integer NOT NULL,
-    "ID_Pagamento" integer NOT NULL,
-    CONSTRAINT "ID_Aposta" PRIMARY KEY ("ID_Aposta")
+    ID_Aposta integer NOT NULL,
+    ID_Usuario integer NOT NULL,
+    ID_Pagamento integer NOT NULL,
+    CONSTRAINT ID_Aposta PRIMARY KEY (ID_Aposta)
 );
+COMMIT;
 
-CREATE TABLE IF NOT EXISTS public."Banco"
+CREATE TABLE IF NOT EXISTS public.Banco
 (
-    "ID_Banco" integer NOT NULL,
-    "Numero_Cartao" integer NOT NULL,
-    "Agencia" VARCHAR(10) NOT NULL,
-    "Banco" VARCHAR(15) NOT NULL,
-    "ID_Pix" integer,
-    CONSTRAINT "ID_Banco" PRIMARY KEY ("ID_Banco")
+    ID_Banco integer NOT NULL,
+    Numero_Cartao integer NOT NULL,
+    Agencia VARCHAR(10) NOT NULL,
+    Banco VARCHAR(15) NOT NULL,
+    ID_Pix integer,
+    CONSTRAINT ID_Banco PRIMARY KEY (ID_Banco)
 );
+COMMIT;
 
-CREATE TABLE IF NOT EXISTS public."Pix"
+CREATE TABLE IF NOT EXISTS public.Pix
 (
-    "ID_Pix" integer NOT NULL,
-    "Tipo_Pix" text NOT NULL,
-    "Chave_Pix" text NOT NULL,
-    "ID_Banco" integer,
-    CONSTRAINT "ID_Pix" PRIMARY KEY ("ID_Pix")
+    ID_Pix integer NOT NULL,
+    Tipo_Pix text NOT NULL,
+    Chave_Pix text NOT NULL,
+    ID_Banco integer,
+    CONSTRAINT ID_Pix PRIMARY KEY (ID_Pix)
 );
+COMMIT;
 
-CREATE TABLE IF NOT EXISTS public."ChaveAposta_Times"
+CREATE TABLE IF NOT EXISTS public.ChaveAposta_Times
 (
-    "Times_Posicao1" VARCHAR(30),
-    "Times_Posicao2" VARCHAR(30),
-    "Times_Posicao3" VARCHAR(30),
-    "Times_Posicao4" VARCHAR(30),
-    "Times_Posicao5" VARCHAR(30),
-    "Times_Posicao6" VARCHAR(30),
-    "ID_ChaveAposta" integer NOT NULL,
-    CONSTRAINT "ID_ChaveAposta" PRIMARY KEY ("ID_ChaveAposta")
+    Times_Posicao1 VARCHAR(30),
+    Times_Posicao2 VARCHAR(30),
+    Times_Posicao3 VARCHAR(30),
+    Times_Posicao4 VARCHAR(30),
+    Times_Posicao5 VARCHAR(30),
+    Times_Posicao6 VARCHAR(30),
+    ID_ChaveAposta integer NOT NULL,
+    CONSTRAINT ID_ChaveAposta PRIMARY KEY (ID_ChaveAposta)
 );
+COMMIT;
 
-CREATE TABLE IF NOT EXISTS public."Pagamento"
+CREATE TABLE IF NOT EXISTS public.Pagamento
 (
-    "ID_Pagamento" integer NOT NULL,
-    "ID_Banco" integer NOT NULL,
-    "ID_Aposta" integer NOT NULL,
-    "Valor" decimal(10,2) NOT NULL,
-    CONSTRAINT "ID_Pagamento" PRIMARY KEY ("ID_Pagamento")
+    ID_Pagamento integer NOT NULL,
+    ID_Banco integer NOT NULL,
+    ID_Aposta integer NOT NULL,
+    Valor decimal(10,2) NOT NULL,
+    CONSTRAINT ID_Pagamento PRIMARY KEY (ID_Pagamento)
 );
+COMMIT;
 
-ALTER TABLE IF EXISTS public."Usuario"
-    ADD CONSTRAINT "ID_Banco" FOREIGN KEY ("ID_Banco")
-    REFERENCES public."Banco" ("ID_Banco") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Usuario
+    ADD CONSTRAINT ID_Banco FOREIGN KEY (ID_Banco)
+    REFERENCES public.Banco (ID_Banco) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."Usuario"
-    ADD CONSTRAINT "ID_Aposta" FOREIGN KEY ("ID_Aposta")
-    REFERENCES public."Aposta" ("ID_Aposta") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Usuario
+    ADD CONSTRAINT ID_Aposta FOREIGN KEY (ID_Aposta)
+    REFERENCES public.Aposta (ID_Aposta) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."Aposta"
-    ADD CONSTRAINT "ID_Usuario" FOREIGN KEY ("ID_Usuario")
-    REFERENCES public."Usuario" ("ID_Usuario") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Aposta
+    ADD CONSTRAINT ID_Usuario FOREIGN KEY (ID_Usuario)
+    REFERENCES public.Usuario (ID_Usuario) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."Aposta"
-    ADD CONSTRAINT "ID_Pagamento" FOREIGN KEY ("ID_Pagamento")
-    REFERENCES public."Pagamento" ("ID_Pagamento") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Aposta
+    ADD CONSTRAINT ID_Pagamento FOREIGN KEY (ID_Pagamento)
+    REFERENCES public.Pagamento (ID_Pagamento) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."Banco"
-    ADD CONSTRAINT "ID_Pix" FOREIGN KEY ("ID_Pix")
-    REFERENCES public."Pix" ("ID_Pix") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Banco
+    ADD CONSTRAINT ID_Pix FOREIGN KEY (ID_Pix)
+    REFERENCES public.Pix (ID_Pix) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."Pix"
-    ADD CONSTRAINT "ID_Banco" FOREIGN KEY ("ID_Banco")
-    REFERENCES public."Banco" ("ID_Banco") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Pix
+    ADD CONSTRAINT ID_Banco FOREIGN KEY (ID_Banco)
+    REFERENCES public.Banco (ID_Banco) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."ChaveAposta_Times"
-    ADD CONSTRAINT "ID_Aposta" FOREIGN KEY ("ID_ChaveAposta")
-    REFERENCES public."Aposta" ("ID_Aposta") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.ChaveAposta_Times
+    ADD CONSTRAINT ID_Aposta FOREIGN KEY (ID_ChaveAposta)
+    REFERENCES public.Aposta (ID_Aposta) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."Pagamento"
-    ADD CONSTRAINT "ID_Banco" FOREIGN KEY ("ID_Banco")
-    REFERENCES public."Banco" ("ID_Banco") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Pagamento
+    ADD CONSTRAINT ID_Banco FOREIGN KEY (ID_Banco)
+    REFERENCES public.Banco (ID_Banco) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 
-ALTER TABLE IF EXISTS public."Pagamento"
-    ADD CONSTRAINT "ID_Aposta" FOREIGN KEY ("ID_Aposta")
-    REFERENCES public."Aposta" ("ID_Aposta") MATCH SIMPLE
+ALTER TABLE IF EXISTS public.Pagamento
+    ADD CONSTRAINT ID_Aposta FOREIGN KEY (ID_Aposta)
+    REFERENCES public.Aposta (ID_Aposta) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+COMMIT;
 
 END;
