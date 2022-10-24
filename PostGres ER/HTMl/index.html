@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="icon" href="../IMAGES" />
+  <link rel="stylesheet" href="../CSS/index.css" />
+  <title>Bolão Copa 2022</title>
+</head>
+  <body onload="loader()">
+    <div class="loader" id="loader"></div>
+
+    <header>
+      <img class="logo" src="https://cdn.discordapp.com/attachments/228935864397332480/1032713960836825178/logo.png" alt="logo">
+        <nav>
+         <ul class="nav_links">
+          <li><a href="#">Apostas</a></li>
+          <li><a href="#">Resultados</a></li>
+         </ul>
+        </nav>
+      <button><img class="usuario" src="../IMAGES/adicionar-usuario.png" alt=""></button></a>
+    </header>
+<h1 class="sub-title"> Times da Copa</h1>
+<h1 class="sub-title1">Apostas</h1>
+<br>
+  <div class="container1">
+    <div class="column">
+      <div draggable="true"><img class="img" src="/IMAGES/bandeiras/brasil.svg"></div>
+      <div draggable="true"><img class="img" src="/IMAGES/bandeiras/alemanha.svg"></div>
+      <div draggable="true"><img class="img" src="/IMAGES/bandeiras/catar.svg"></div>
+      <div draggable="true"><img class="img" src="/IMAGES/bandeiras/argentina.svg"></div>
+      <div draggable="true"><img class="img" src="/IMAGES/bandeiras/franca.svg"></div>
+      <div draggable="true"><img class="img" src="/IMAGES/bandeiras/portugal.svg"></div>
+    </div>
+  </div>
+
+  <div class="container2">
+    <div class="logos">
+      <div><img class="trofeu1" src="/IMAGES/1 lugar.png" alt=""></div>
+      <div><img class="trofeu1" src="/IMAGES/2 lugar.png" alt=""></div>
+      <div><img class="trofeu1" src="/IMAGES/3 lugar.png" alt=""></div>
+    </div>
+    <div class="column">
+
+    </div>
+  </div>
+
+  <div class="apostas">
+    <h1>$ <input class="preco" onkeypress="return onlynumber();" type="text"><button class="check">check</button></h1>
+  </div>
+
+
+  
+  <video autoplay muted loop id="myVideo">
+    <source src="../VIDEO/hd-vinheta-de-abertura-da-copa-do-mundo-do-catar-2022-2022-fifa-world-cup-quatar.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+
+  <script src="/JS/index.js"></script>
+  <script src="/JS/loader.js"></script> 
+</body>
+</html>
