@@ -35,7 +35,7 @@ header {
   float: left;
   margin-left: 27.5%;
   min-height: 350px;
-  max-height: 350px;
+  max-height: 750px;
   padding: 2px;
 }
 .column {
@@ -69,7 +69,7 @@ header {
   border-radius: 25px;
   width: 80px;
   font-size: 20px;
-  cursor: pointer;
+  cursor: po;
   margin-left: 10px;
 }
 
@@ -157,14 +157,38 @@ header {
   float: left;
 }
 
-button {
-  background-color: rgba(116, 20, 213, 0);
-  padding:  10px 10px;
+.btn {
+  background-color: rgba(94, 3, 185, 0);
+  padding:  10px 10px 5px;
   border: none;
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.3 ease 0s;
+ 
 }
+
+.apostas input[type=submit]{
+  padding:  10px 40px;
+  border: 0;
+  border-radius: 10px;
+  background-color: darkorchid;
+  color: #ffffff;
+  cursor: pointer;
+  
+}
+.preco{
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+.apostas{
+  display: flex;
+  float: left;
+  align-items: flex-end;
+  margin-left: 0px;
+  margin-top: 285px;
+}
+
 
 .loader {
   top: 300px;
