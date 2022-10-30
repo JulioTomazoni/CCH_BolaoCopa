@@ -1,3 +1,3 @@
 $(window).load(function () {
-  $('#loader').fadeOut(1800)
+  $('#socket').fadeOut(3800)
 })

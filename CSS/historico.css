@@ -6,16 +6,12 @@
   z-index: 2;
 }
 
-
-
 html {
   background-repeat: no-repeat;
   background-size: 100%;
   height: 100%;
   background-color: black;
 }
-
-
 
 header {
   display: flex;
@@ -24,16 +20,12 @@ header {
   z-index: 2;
 }
 
-
-
 .logo {
   cursor: pointer;
   max-width: 50px;
   max-height: 50px;
   margin-left: 80px;
 }
-
-
 
 .btn-usuario {
   background-color: rgba(116, 20, 213, 0);
@@ -50,8 +42,6 @@ header {
   cursor: pointer;
 }
 
-
-
 .dropdown {
   margin-left: 85%;
   top: 57px;
@@ -59,14 +49,10 @@ header {
   justify-content: center;
 }
 
-
-
 .logout {
   height: 20px;
   width: 20px;
 }
-
-
 
 nav.primary-navigation {
   display: flex;
@@ -130,120 +116,28 @@ ul li ul li a {
   justify-content: center;
 }
 
-
-
-.sub-title {
-  border: 2px solid rgb(0, 0, 0);
+.sub-title{
+  border: 2px solid rgba(255, 255, 255, 0);
   border-radius: 5px;
-  background: #660fc8;
+  background: #5e19cc;
   color: rgb(255, 251, 251);
   margin-top: 10px;
-  float: left;
-  margin-left: 135px;
+  margin-left: 45%;
   font-size: 25px;
   padding: 4px;
+  width: 105px;
 }
 
-
-
-.sub-title1 {
-  border: 2px solid rgb(0, 0, 0);
-  background: #660fc8;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-  margin-top: 10px;
-  margin-left: 44%;
-  max-width: fit-content;
-  font-size: 25px;
-  padding: 4px;
+.historico{
+  height: 500px;
+  width: 1300px;
+  margin: 10px 7.5% 10px ;
+  border: 2px solid white;
 }
 
-
-
-.container1 {
+.valores{
   display: flex;
-  float: left;
-  width: 100px;
-  padding: 2px;
-  min-height: 370px;
-  max-height: 500px;
 }
-.column {
-  background: #00000089;
-  border: 1px solid white;
-  display: flex;
-  margin-left: 100px;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 250px;
-  min-height: 500px;
-  border-radius: 5px;
-}
-.img {
-  margin-left: -5%;
-  height: 70px;
-  width: 280px;
-}
-
-
-
-.container2 {
-  display: flex;
-  float: left;
-  margin-left: 20.5%;
-  min-height: 350px;
-  max-height: 350px;
-  padding: 2px;
-}
-.column2 {
-  background: #00000089;
-  border: 1px solid white;
-  display: flex;
-  margin-left: 100px;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 250px;
-  min-height: 250px;
-  border-radius: 5px;
-}
-.trofeu1 {
-  height: 80px;
-  margin-top: 2px;
-  margin-left: 100%;
-}
-
-
-
-.preco {
-  margin-left: -255px;
-  margin-top: 400px;
-  width: 200px;
-  height: 30px;
-}
-.check {
-  border: 1px solid rgb(70, 70, 70);
-  background: #660fc8;
-  color: white;
-  border-radius: 25px;
-  width: 80px;
-  font-size: 20px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-
-
-.video {
-  z-index: 1;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  opacity: 10%;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-
 .socket {
   position: absolute;
   left: 50%;
