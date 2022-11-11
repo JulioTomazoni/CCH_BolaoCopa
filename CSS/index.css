@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  z-index: 2;
 }
 
 
@@ -20,6 +19,7 @@ html {
 header {
   display: flex;
   padding: 0.5%;
+  justify-content: space-between;
   background-image: linear-gradient(45deg, rgb(5, 5, 5), rgb(136, 0, 255));
   z-index: 2;
 }
@@ -41,8 +41,7 @@ header {
   cursor: pointer;
   transition: all 0.3 ease 0s;
   overflow-x: hidden;
-  margin-inline-start: 1000px;
-  display: table;
+  margin-left: -90%;
 }
 .usuario {
   height: 40px;
@@ -53,7 +52,6 @@ header {
 
 
 .dropdown {
-  margin-left: 85%;
   top: 57px;
   align-items: center;
   justify-content: center;
@@ -91,17 +89,13 @@ nav.primary-navigation li:hover {
   cursor: pointer;
 }
 nav.primary-navigation ul li ul {
-  visibility: hidden;
-  opacity: 0;
+  right: 0;
+  display: none;
   position: absolute;
-  justify-content: center;
-  display: flex;
   background: white;
 }
 nav.primary-navigation ul li:hover > ul,
 nav.primary-navigation ul li ul:hover {
-  visibility: visible;
-  opacity: 1;
   display: block;
   min-width: 170px;
   max-width: 170px;
@@ -117,13 +111,12 @@ nav.primary-navigation ul li ul li a:hover {
   padding-left: 10px;
   border-left: 2px solid #3ca0e7;
   transition: all 0.3s ease;
-  justify-content: center;
 }
 a {
   text-decoration: none;
 }
 a:hover {
-  color: #3ca0e7;
+  color: #8026d4;
 }
 ul li ul li a {
   transition: all 0.5s ease;
@@ -242,6 +235,7 @@ ul li ul li a {
   min-width: 100%;
   min-height: 100%;
 }
+
 
 
 .socket {
